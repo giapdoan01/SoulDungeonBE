@@ -1,0 +1,4 @@
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-02 12:19:04"}
+{"database":"Supabase PostgreSQL","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-02 12:19:04"}
+{"email":"player@example.com","ip":"::1","level":"info","message":"Login attempt","timestamp":"2026-01-02 12:19:10"}
+{"duration":"223ms","email":"player@example.com","ip":"::1","level":"info","message":"User logged in successfully","timestamp":"2026-01-02 12:19:10","userId":1,"username":"player123"}

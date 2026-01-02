@@ -1,0 +1,1 @@
+{"action":"LOGIN_SUCCESS","duration":"223ms","email":"player@example.com","ip":"::1","level":"info","message":"Auth Action: LOGIN_SUCCESS","success":true,"timestamp":"2026-01-02T05:19:10.355Z","userAgent":"PostmanRuntime/7.51.0","userId":1,"username":"player123"}
