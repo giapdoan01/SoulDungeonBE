@@ -1,6 +1,9 @@
-// src/utils/response.js - Response Utilities
+// src/utils/response.js - Response Helper Functions
 
-const successResponse = (res, message, data = null, statusCode = 200) => {
+/**
+ * Success Response
+ */
+const successResponse = (res, message = 'Success', data = null, statusCode = 200) => {
   const response = {
     success: true,
     message
@@ -13,7 +16,10 @@ const successResponse = (res, message, data = null, statusCode = 200) => {
   return res.status(statusCode).json(response);
 };
 
-const errorResponse = (res, message, statusCode = 400, errors = null) => {
+/**
+ * Error Response
+ */
+const errorResponse = (res, message = 'Error', statusCode = 500, errors = null) => {
   const response = {
     success: false,
     message

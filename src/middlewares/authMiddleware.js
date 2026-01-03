@@ -1,30 +1,60 @@
-// src/middlewares/authMiddleware.js - Authentication Middleware
+// src/middlewares/authMiddleware.js - JWT Authentication Middleware
 const jwt = require('jsonwebtoken');
 const { errorResponse } = require('../utils/response');
+const { logInfo, logError } = require('../config/logger');
 
-const authenticateToken = (req, res, next) => {
+const authMiddleware = (req, res, next) => {
   try {
     // Lấy token từ header
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1];
+    const authHeader = req.headers.authorization;
 
-    if (!token) {
-      return errorResponse(res, 'Token không tồn tại', 401);
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      logInfo('Auth failed: No token provided', { 
+        ip: req.ip,
+        url: req.originalUrl 
+      });
+      return errorResponse(res, 'Token không hợp lệ', 401);
     }
 
-    // Verify token
-    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-      if (err) {
-        return errorResponse(res, 'Token không hợp lệ hoặc đã hết hạn', 403);
-      }
+    const token = authHeader.split(' ')[1];
 
-      // Lưu thông tin user vào request
-      req.user = decoded;
-      next();
+    // Verify token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    // Gắn user info vào request
+    req.user = {
+      id: decoded.id,
+      email: decoded.email,
+      username: decoded.username
+    };
+
+    logInfo('Auth successful', { 
+      userId: decoded.id,
+      email: decoded.email 
     });
+
+    next();
+
   } catch (error) {
+    if (error.name === 'JsonWebTokenError') {
+      logInfo('Auth failed: Invalid token', { 
+        ip: req.ip,
+        error: error.message 
+      });
+      return errorResponse(res, 'Token không hợp lệ', 401);
+    }
+
+    if (error.name === 'TokenExpiredError') {
+      logInfo('Auth failed: Token expired', { 
+        ip: req.ip,
+        expiredAt: error.expiredAt 
+      });
+      return errorResponse(res, 'Token đã hết hạn', 401);
+    }
+
+    logError('Auth middleware error', error, { ip: req.ip });
     return errorResponse(res, 'Lỗi xác thực', 500);
   }
 };
 
-module.exports = { authenticateToken };
+module.exports = authMiddleware;

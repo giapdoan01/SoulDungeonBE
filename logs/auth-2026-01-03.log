@@ -1,0 +1,1 @@
+{"action":"REGISTER_ERROR","email":"giap1@gmail.com","error":"Cannot read properties of undefined (reading 'query')","level":"info","message":"Auth Action: REGISTER_ERROR","success":false,"timestamp":"2026-01-03T09:43:00.627Z","userId":null}

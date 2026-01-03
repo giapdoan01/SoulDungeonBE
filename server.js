@@ -1,4 +1,4 @@
-// server.js - Entry point with Logging
+// server.js - Entry point
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -40,7 +40,7 @@ app.get('/health', (req, res) => {
     status: 'OK', 
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV,
-    database: 'Supabase PostgreSQL',
+    database: 'Supabase',
     uptime: process.uptime(),
     memory: process.memoryUsage()
   };
@@ -80,43 +80,40 @@ app.use((err, req, res, next) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-  const startupMessage = `Server đang chạy tại http://localhost:${PORT}`;
-  console.log(`🚀 ${startupMessage}`);
+const server = app.listen(PORT, () => {
+  console.log(`🚀 Server đang chạy tại http://localhost:${PORT}`);
   console.log(`📝 Environment: ${process.env.NODE_ENV}`);
-  console.log(`🗄️  Database: Supabase PostgreSQL`);
+  console.log(`🗄️  Database: Supabase`);
   console.log(`📊 Logs directory: ./logs`);
   
   logInfo('Server started successfully', {
     port: PORT,
     environment: process.env.NODE_ENV,
-    database: 'Supabase PostgreSQL'
+    database: 'Supabase'
   });
 });
 
 // Graceful shutdown
 process.on('SIGTERM', () => {
   logInfo('SIGTERM signal received: closing HTTP server');
+  console.log('\n🛑 SIGTERM received, shutting down gracefully...');
+  
   server.close(() => {
     logInfo('HTTP server closed');
+    console.log('✅ Server closed');
     process.exit(0);
   });
 });
 
 process.on('SIGINT', () => {
   logInfo('SIGINT signal received: closing HTTP server');
-  process.exit(0);
-});
-
-// Unhandled rejection
-process.on('unhandledRejection', (reason, promise) => {
-  logError('Unhandled Rejection', reason, {
-    promise: promise
+  console.log('\n🛑 SIGINT received, shutting down gracefully...');
+  
+  server.close(() => {
+    logInfo('HTTP server closed');
+    console.log('✅ Server closed');
+    process.exit(0);
   });
 });
 
-// Uncaught exception
-process.on('uncaughtException', (error) => {
-  logError('Uncaught Exception', error);
-  process.exit(1);
-});
+module.exports = server;

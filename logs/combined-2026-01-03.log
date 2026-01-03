@@ -1,0 +1,21 @@
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-03 14:55:07"}
+{"database":"Supabase PostgreSQL","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-03 14:55:07"}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-03 16:36:41"}
+{"database":"Supabase PostgreSQL (Session Pooler)","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-03 16:36:41"}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-03 16:41:10"}
+{"database":"Supabase PostgreSQL (Session Pooler)","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-03 16:41:10"}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-03 16:41:51"}
+{"database":"Supabase PostgreSQL (Session Pooler)","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-03 16:41:51"}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-03 16:41:54"}
+{"database":"Supabase PostgreSQL (Session Pooler)","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-03 16:41:54"}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-03 16:42:04"}
+{"database":"Supabase","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-03 16:42:04"}
+{"email":"giap1@gmail.com","level":"info","message":"Register attempt","timestamp":"2026-01-03 16:43:00","username":"GiapF4"}
+{"email":"giap1@gmail.com","error":"Cannot read properties of undefined (reading 'query')","level":"error","message":"Register Error","stack":"TypeError: Cannot read properties of undefined (reading 'query')\n    at User.findByEmail (C:\\Users\\HP\\Desktop\\SoulDungeonBE\\src\\models\\User.js:34:33)\n    at register (C:\\Users\\HP\\Desktop\\SoulDungeonBE\\src\\controllers\\authController.js:41:38)\n    at Layer.handle [as handle_request] (C:\\Users\\HP\\Desktop\\SoulDungeonBE\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\HP\\Desktop\\SoulDungeonBE\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at middleware (C:\\Users\\HP\\Desktop\\SoulDungeonBE\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-01-03 16:43:00","username":"GiapF4"}
+{"level":"info","message":"SIGINT signal received: closing HTTP server","timestamp":"2026-01-03 16:43:57"}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-03 16:47:45"}
+{"database":"Supabase","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-03 16:47:45"}
+{"email":"giap1@gmail.com","level":"info","message":"Register attempt","timestamp":"2026-01-03 16:47:51","username":"GiapF4"}
+{"email":"giap1@gmail.com","level":"info","message":"Register successful","timestamp":"2026-01-03 16:47:52","userId":2}
+{"duration":"840ms","email":"giap1@gmail.com","level":"info","message":"Register successful","timestamp":"2026-01-03 16:47:52","userId":2}
+{"level":"info","message":"SIGINT signal received: closing HTTP server","timestamp":"2026-01-03 16:48:25"}
