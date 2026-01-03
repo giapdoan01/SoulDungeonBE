@@ -19,3 +19,19 @@
 {"email":"giap1@gmail.com","level":"info","message":"Register successful","timestamp":"2026-01-03 16:47:52","userId":2}
 {"duration":"840ms","email":"giap1@gmail.com","level":"info","message":"Register successful","timestamp":"2026-01-03 16:47:52","userId":2}
 {"level":"info","message":"SIGINT signal received: closing HTTP server","timestamp":"2026-01-03 16:48:25"}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-03 16:58:27"}
+{"database":"Supabase","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-03 16:58:27"}
+{"ip":"::1","level":"error","message":"Route not found","method":"POST","timestamp":"2026-01-03 16:58:31","url":"/api//health"}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-03 17:00:08"}
+{"database":"Supabase","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-03 17:00:08"}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-03 17:00:12"}
+{"database":"Supabase","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-03 17:00:12"}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-03 17:00:28"}
+{"database":"Supabase","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-03 17:00:28"}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-03 17:00:38"}
+{"database":"Supabase","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-03 17:00:38"}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-03 17:00:51"}
+{"database":"Supabase","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-03 17:00:51"}
+{"ip":"::1","level":"error","message":"Route not found","method":"POST","timestamp":"2026-01-03 17:00:58","url":"/api//health"}
+{"ip":"::1","level":"error","message":"Route not found","method":"POST","timestamp":"2026-01-03 17:01:14","url":"/health"}
+{"level":"info","message":"SIGINT signal received: closing HTTP server","timestamp":"2026-01-03 17:01:33"}
