@@ -1,0 +1,66 @@
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-04 10:44:48"}
+{"database":"Supabase","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-04 10:44:48"}
+{"ip":"::1","level":"error","message":"Route not found","method":"GET","timestamp":"2026-01-04 10:46:52","url":"/api/auth/register"}
+{"email":"giaptest2@gmail.com","level":"info","message":"Register attempt","timestamp":"2026-01-04 10:47:10","username":"Giaptest2"}
+{"email":"giaptest2@gmail.com","level":"info","message":"Register successful","timestamp":"2026-01-04 10:47:11","userId":3}
+{"duration":"1676ms","email":"giaptest2@gmail.com","level":"info","message":"Register successful","timestamp":"2026-01-04 10:47:11","userId":3}
+{"email":"giaptest2@gmail.com","ip":"::1","level":"info","message":"Login attempt","timestamp":"2026-01-04 10:48:18"}
+{"email":"giaptest2@gmail.com","level":"info","message":"Login successful","timestamp":"2026-01-04 10:48:19","userId":3}
+{"duration":"1069ms","email":"giaptest2@gmail.com","ip":"::1","level":"info","message":"Login successful","timestamp":"2026-01-04 10:48:19","userId":3}
+{"email":"giaptest2@gmail.com","ip":"::1","level":"info","message":"Login attempt","timestamp":"2026-01-04 10:49:08"}
+{"email":"giaptest2@gmail.com","level":"info","message":"Login successful","timestamp":"2026-01-04 10:49:10","userId":3}
+{"duration":"1773ms","email":"giaptest2@gmail.com","ip":"::1","level":"info","message":"Login successful","timestamp":"2026-01-04 10:49:10","userId":3}
+{"ip":"::1","level":"info","message":"Auth failed: No token provided","timestamp":"2026-01-04 10:50:42","url":"/api/auth/me"}
+{"email":"giaptest2@gmail.com","ip":"::1","level":"info","message":"Login attempt","timestamp":"2026-01-04 10:50:58"}
+{"email":"giaptest2@gmail.com","level":"info","message":"Login successful","timestamp":"2026-01-04 10:50:59","userId":3}
+{"duration":"1490ms","email":"giaptest2@gmail.com","ip":"::1","level":"info","message":"Login successful","timestamp":"2026-01-04 10:50:59","userId":3}
+{"ip":"::1","level":"info","message":"Auth failed: No token provided","timestamp":"2026-01-04 10:51:15","url":"/api/auth/me"}
+{"email":"giaptest2@gmail.com","level":"info","message":"Auth successful","timestamp":"2026-01-04 10:51:36","userId":3}
+{"email":"giaptest2@gmail.com","level":"info","message":"Auth successful","timestamp":"2026-01-04 10:53:54","userId":3}
+{"level":"info","message":"Change password attempt","timestamp":"2026-01-04 10:53:54","userId":3}
+{"level":"info","message":"Logout all devices","timestamp":"2026-01-04 10:53:57","userId":3}
+{"level":"info","message":"Logout all devices successful","timestamp":"2026-01-04 10:53:57","userId":3}
+{"level":"info","message":"Change password successful","timestamp":"2026-01-04 10:53:57","userId":3}
+{"level":"info","message":"Password changed successfully","timestamp":"2026-01-04 10:53:57","userId":3}
+{"email":"giaptest2@gmail.com","ip":"::1","level":"info","message":"Login attempt","timestamp":"2026-01-04 10:54:10"}
+{"email":"giaptest2@gmail.com","level":"info","message":"Login successful","timestamp":"2026-01-04 10:54:11","userId":3}
+{"duration":"1318ms","email":"giaptest2@gmail.com","ip":"::1","level":"info","message":"Login successful","timestamp":"2026-01-04 10:54:11","userId":3}
+{"email":"giaptest2@gmail.com","level":"info","message":"Auth successful","timestamp":"2026-01-04 10:54:30","userId":3}
+{"email":"giaptest2@gmail.com","level":"info","message":"Forgot password attempt","timestamp":"2026-01-04 10:59:26"}
+{"level":"info","message":"Password reset token generated","timestamp":"2026-01-04 10:59:28","userId":3}
+{"level":"info","message":"Reset password attempt","timestamp":"2026-01-04 11:00:50"}
+{"level":"info","message":"Reset password failed: Token expired","timestamp":"2026-01-04 11:00:51"}
+{"email":"giaptest2@gmail.com","level":"info","message":"Forgot password attempt","timestamp":"2026-01-04 11:01:02"}
+{"level":"info","message":"Password reset token generated","timestamp":"2026-01-04 11:01:02","userId":3}
+{"level":"info","message":"Reset password attempt","timestamp":"2026-01-04 11:01:13"}
+{"level":"info","message":"Reset password failed: Token expired","timestamp":"2026-01-04 11:01:14"}
+{"email":"giaptest2@gmail.com","level":"info","message":"Forgot password attempt","timestamp":"2026-01-04 11:02:16"}
+{"level":"info","message":"Password reset token generated","timestamp":"2026-01-04 11:02:17","userId":3}
+{"level":"info","message":"Reset password attempt","timestamp":"2026-01-04 11:02:29"}
+{"level":"info","message":"Reset password failed: Token expired","timestamp":"2026-01-04 11:02:29"}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-04 11:05:46"}
+{"database":"Supabase","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-04 11:05:46"}
+{"email":"giaptest2@gmail.com","level":"info","message":"Forgot password attempt","timestamp":"2026-01-04 11:05:53"}
+{"level":"info","message":"Password reset token generated","timestamp":"2026-01-04 11:05:54","tokenLength":64,"userId":3}
+{"level":"info","message":"Reset password attempt","timestamp":"2026-01-04 11:06:04","tokenLength":64}
+{"expiresAt":"2026-01-04T05:05:54.231","level":"info","message":"Reset password failed: Token expired","now":"2026-01-04T04:06:04.990Z","timestamp":"2026-01-04 11:06:04"}
+{"email":"giaptest2@gmail.com","level":"info","message":"Forgot password attempt","timestamp":"2026-01-04 11:06:25"}
+{"level":"info","message":"Password reset token generated","timestamp":"2026-01-04 11:06:26","tokenLength":64,"userId":3}
+{"level":"info","message":"Reset password attempt","timestamp":"2026-01-04 11:06:36","tokenLength":64}
+{"expiresAt":"2026-01-04T05:06:25.994","level":"info","message":"Reset password failed: Token expired","now":"2026-01-04T04:06:36.389Z","timestamp":"2026-01-04 11:06:36"}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-04 11:10:14"}
+{"database":"Supabase","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-04 11:10:14"}
+{"level":"info","message":"SIGINT signal received: closing HTTP server","timestamp":"2026-01-04 11:10:16"}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-04 11:10:18"}
+{"database":"Supabase","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-04 11:10:18"}
+{"email":"giaptest2@gmail.com","level":"info","message":"🔵 [FORGOT PASSWORD] Start","timestamp":"2026-01-04 11:10:23"}
+{"level":"info","message":"✅ [FORGOT PASSWORD] Token generated","timestamp":"2026-01-04 11:10:23","tokenId":6,"userId":3}
+{"environment":"development","level":"info","message":"Server starting...","nodeVersion":"v22.15.0","port":"3000","timestamp":"2026-01-04 11:12:33"}
+{"database":"Supabase","environment":"development","level":"info","message":"Server started successfully","port":"3000","timestamp":"2026-01-04 11:12:33"}
+{"email":"giaptest2@gmail.com","level":"info","message":"Forgot password attempt","timestamp":"2026-01-04 11:12:45"}
+{"level":"info","message":"Password reset token generated","timestamp":"2026-01-04 11:12:45","userId":3}
+{"level":"info","message":"Reset password attempt","timestamp":"2026-01-04 11:12:56"}
+{"level":"info","message":"Logout all devices","timestamp":"2026-01-04 11:12:57","userId":3}
+{"level":"info","message":"Logout all devices successful","timestamp":"2026-01-04 11:12:57","userId":3}
+{"level":"info","message":"Reset password successful","timestamp":"2026-01-04 11:12:57","userId":3}
+{"level":"info","message":"Password reset successful","timestamp":"2026-01-04 11:12:57"}

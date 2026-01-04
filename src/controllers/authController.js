@@ -1,10 +1,12 @@
-// src/controllers/authController.js - Auth Controller
+// src/controllers/authController.js - Complete Auth Controller
 const { validationResult } = require('express-validator');
 const AuthService = require('../services/authService');
 const { successResponse, errorResponse } = require('../utils/response');
 const { logInfo, logError } = require('../config/logger');
 
-// Register Controller
+/**
+ * Register Controller
+ */
 const register = async (req, res) => {
   const startTime = Date.now();
   
@@ -24,7 +26,11 @@ const register = async (req, res) => {
     const duration = Date.now() - startTime;
 
     if (!result.success) {
-      logInfo('Register failed', { email, reason: result.message, duration: `${duration}ms` });
+      logInfo('Register failed', { 
+        email, 
+        reason: result.message, 
+        duration: `${duration}ms` 
+      });
       return errorResponse(res, result.message, 400);
     }
 
@@ -46,10 +52,13 @@ const register = async (req, res) => {
   }
 };
 
-// Login Controller
+/**
+ * Login Controller
+ */
 const login = async (req, res) => {
   const startTime = Date.now();
   const ipAddress = req.ip || req.connection.remoteAddress;
+  const userAgent = req.get('user-agent');
   
   try {
     // Validate input
@@ -62,7 +71,7 @@ const login = async (req, res) => {
     const { email, password } = req.body;
 
     // Gọi AuthService
-    const result = await AuthService.login(email, password);
+    const result = await AuthService.login(email, password, ipAddress, userAgent);
 
     const duration = Date.now() - startTime;
 
@@ -96,7 +105,77 @@ const login = async (req, res) => {
   }
 };
 
-// Get User Info Controller
+/**
+ * Logout Controller
+ */
+const logout = async (req, res) => {
+  try {
+    const { refreshToken } = req.body;
+
+    const result = await AuthService.logout(refreshToken);
+
+    if (!result.success) {
+      return errorResponse(res, result.message, 400);
+    }
+
+    logInfo('Logout successful');
+    return successResponse(res, result.message);
+
+  } catch (error) {
+    logError('Logout controller error', error);
+    return errorResponse(res, 'Lỗi server', 500);
+  }
+};
+
+/**
+ * Logout All Devices Controller
+ */
+const logoutAllDevices = async (req, res) => {
+  try {
+    const userId = req.user.id;
+
+    const result = await AuthService.logoutAllDevices(userId);
+
+    if (!result.success) {
+      return errorResponse(res, result.message, 400);
+    }
+
+    logInfo('Logout all devices successful', { userId });
+    return successResponse(res, result.message);
+
+  } catch (error) {
+    logError('Logout all devices controller error', error, { 
+      userId: req.user?.id 
+    });
+    return errorResponse(res, 'Lỗi server', 500);
+  }
+};
+
+/**
+ * Refresh Token Controller
+ */
+const refreshToken = async (req, res) => {
+  try {
+    const { refreshToken } = req.body;
+
+    const result = await AuthService.refreshAccessToken(refreshToken);
+
+    if (!result.success) {
+      return errorResponse(res, result.message, 401);
+    }
+
+    logInfo('Refresh token successful');
+    return successResponse(res, result.message, result.data);
+
+  } catch (error) {
+    logError('Refresh token controller error', error);
+    return errorResponse(res, 'Lỗi server', 500);
+  }
+};
+
+/**
+ * Get User Info Controller
+ */
 const getUserInfo = async (req, res) => {
   try {
     const userId = req.user.id;
@@ -110,12 +189,16 @@ const getUserInfo = async (req, res) => {
     return successResponse(res, 'Lấy thông tin user thành công', result.data);
 
   } catch (error) {
-    logError('Get user info controller error', error, { userId: req.user?.id });
+    logError('Get user info controller error', error, { 
+      userId: req.user?.id 
+    });
     return errorResponse(res, 'Lỗi server', 500);
   }
 };
 
-// Change Password Controller
+/**
+ * Change Password Controller
+ */
 const changePassword = async (req, res) => {
   try {
     // Validate input
@@ -137,7 +220,61 @@ const changePassword = async (req, res) => {
     return successResponse(res, result.message);
 
   } catch (error) {
-    logError('Change password controller error', error, { userId: req.user?.id });
+    logError('Change password controller error', error, { 
+      userId: req.user?.id 
+    });
+    return errorResponse(res, 'Lỗi server', 500);
+  }
+};
+
+/**
+ * Forgot Password Controller
+ */
+const forgotPassword = async (req, res) => {
+  try {
+    // Validate input
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return errorResponse(res, 'Dữ liệu không hợp lệ', 400, errors.array());
+    }
+
+    const { email } = req.body;
+
+    const result = await AuthService.forgotPassword(email);
+
+    // Always return success (security best practice)
+    return successResponse(res, result.message, result.data);
+
+  } catch (error) {
+    logError('Forgot password controller error', error);
+    return errorResponse(res, 'Lỗi server', 500);
+  }
+};
+
+/**
+ * Reset Password Controller
+ */
+const resetPassword = async (req, res) => {
+  try {
+    // Validate input
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return errorResponse(res, 'Dữ liệu không hợp lệ', 400, errors.array());
+    }
+
+    const { token, newPassword } = req.body;
+
+    const result = await AuthService.resetPassword(token, newPassword);
+
+    if (!result.success) {
+      return errorResponse(res, result.message, 400);
+    }
+
+    logInfo('Password reset successful');
+    return successResponse(res, result.message);
+
+  } catch (error) {
+    logError('Reset password controller error', error);
     return errorResponse(res, 'Lỗi server', 500);
   }
 };
@@ -145,6 +282,11 @@ const changePassword = async (req, res) => {
 module.exports = {
   register,
   login,
+  logout,
+  logoutAllDevices,
+  refreshToken,
   getUserInfo,
-  changePassword
+  changePassword,
+  forgotPassword,
+  resetPassword
 };
