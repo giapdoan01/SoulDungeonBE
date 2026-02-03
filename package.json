@@ -4,8 +4,12 @@
   "description": "Unity Authentication Backend with Supabase PostgreSQL",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "concurrently \"npm run start:api\" \"npm run start:ws\"",
+    "start:api": "node src/app.js",
+    "start:ws": "node --unhandled-rejections=none src/server.js",
+    "dev": "concurrently \"nodemon app.js\" \"nodemon --unhandled-rejections=warn server.js\"",
+    "dev:api": "nodemon app.js",
+    "dev:ws": "nodemon --unhandled-rejections=warn server.js"
   },
   "keywords": [
     "unity",
@@ -13,16 +17,20 @@
     "mvc",
     "express",
     "supabase",
-    "postgresql"
+    "postgresql",
+    "websocket",
+    "colyseus"
   ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@colyseus/monitor": "^0.17.7",
     "@colyseus/schema": "^4.0.7",
+    "@colyseus/ws-transport": "^0.17.8",
     "@supabase/supabase-js": "^2.39.0",
     "bcryptjs": "^2.4.3",
     "colyseus": "^0.17.8",
+    "concurrently": "^9.2.1",
     "cors": "^2.8.6",
     "dotenv": "^16.3.1",
     "express": "^4.22.1",
@@ -32,12 +40,11 @@
     "pg": "^8.11.3",
     "reflect-metadata": "^0.2.2",
     "winston": "^3.11.0",
-    "winston-daily-rotate-file": "^4.7.1"
+    "winston-daily-rotate-file": "^4.7.1",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@types/node": "^25.2.0",
-    "nodemon": "^3.0.2",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "nodemon": "^3.0.2"
   }
 }

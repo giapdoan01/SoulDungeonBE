@@ -1,4 +1,5 @@
-const { Schema, type, MapSchema, ArraySchema } = require("@colyseus/schema");
+// Colyseus/schema/MatchmakingState.js
+const { Schema, type, MapSchema } = require("@colyseus/schema");
 
 class MmPlayer extends Schema {
   constructor() {
@@ -33,7 +34,7 @@ class Party extends Schema {
     super();
     this.code = "";
     this.hostId = "";
-    this.members = new ArraySchema();
+    this.members = [];
     this.maxPlayers = 4;
     this.createdAt = 0;
     this.locked = false;
