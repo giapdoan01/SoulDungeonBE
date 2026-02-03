@@ -2,12 +2,12 @@
 const { createClient } = require('@supabase/supabase-js');
 
 const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_KEY;
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 // Kiểm tra biến môi trường
 if (!supabaseUrl || !supabaseKey) {
-  console.error('❌ SUPABASE_URL hoặc SUPABASE_KEY chưa được thiết lập');
-  console.error('💡 Hãy kiểm tra file .env của bạn');
+  console.error('SUPABASE_URL hoặc SUPABASE_KEY chưa được thiết lập');
+  console.error('Hãy kiểm tra file .env của bạn');
   process.exit(1);
 }
 

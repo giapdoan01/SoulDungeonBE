@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\Users\\666\\Desktop\\SoulDungeonBE\\logs\\.49917d52bddb5f4f7b35a089cc5c7736b1f957c0-audit.json",
+    "files": [
+        {
+            "date": 1770092593790,
+            "name": "C:\\Users\\666\\Desktop\\SoulDungeonBE\\logs\\access-2026-02-03.log",
+            "hash": "e4b6af4c13f8ee6c207e8118fca2b17a1e4fc08802bd17a5e24f7e531139f74b"
+        }
+    ],
+    "hashType": "sha256"
+}
