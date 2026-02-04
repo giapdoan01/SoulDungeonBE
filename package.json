@@ -4,9 +4,7 @@
   "description": "Unity Authentication Backend with Supabase PostgreSQL",
   "main": "server.js",
   "scripts": {
-    "start": "concurrently \"npm run start:api\" \"npm run start:ws\"",
-    "start:api": "node src/app.js",
-    "start:ws": "node --unhandled-rejections=none src/server.js",
+    "start": "node src/app.js",
     "dev": "concurrently \"nodemon app.js\" \"nodemon --unhandled-rejections=warn server.js\"",
     "dev:api": "nodemon app.js",
     "dev:ws": "nodemon --unhandled-rejections=warn server.js"

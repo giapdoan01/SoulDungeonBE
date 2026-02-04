@@ -20,3 +20,13 @@
 {"email":"giapdoan01@gmail.com","ip":"::1","level":"info","message":"Login attempt","timestamp":"2026-02-04 08:46:31"}
 {"email":"giapdoan01@gmail.com","level":"info","message":"Login successful","timestamp":"2026-02-04 08:46:32","userId":5}
 {"duration":"1138ms","email":"giapdoan01@gmail.com","ip":"::1","level":"info","message":"Login successful","timestamp":"2026-02-04 08:46:32","userId":5}
+{"level":"info","message":"SIGINT signal received: closing API server","timestamp":"2026-02-04 08:56:02"}
+{"level":"info","message":"Supabase database initialized successfully","timestamp":"2026-02-04 08:56:06"}
+{"count":3,"level":"info","message":"User count retrieved","timestamp":"2026-02-04 08:56:07"}
+{"environment":"development","level":"info","message":"API Server starting...","port":"3000","timestamp":"2026-02-04 08:56:07"}
+{"environment":"development","level":"info","message":"API Server started successfully","port":"3000","timestamp":"2026-02-04 08:56:07"}
+{"level":"info","message":"SIGINT signal received: closing API server","timestamp":"2026-02-04 08:56:12"}
+{"level":"info","message":"Supabase database initialized successfully","timestamp":"2026-02-04 08:56:17"}
+{"count":3,"level":"info","message":"User count retrieved","timestamp":"2026-02-04 08:56:17"}
+{"environment":"development","level":"info","message":"API Server starting...","port":"3000","timestamp":"2026-02-04 08:56:17"}
+{"environment":"development","level":"info","message":"API Server started successfully","port":"3000","timestamp":"2026-02-04 08:56:17"}
